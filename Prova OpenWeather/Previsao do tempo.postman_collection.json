@@ -1,0 +1,392 @@
+{
+	"info": {
+		"_postman_id": "68a6c640-2d7f-4ae2-94c2-161f2b23697b",
+		"name": "Previsao do tempo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Por cidade",
+			"item": [
+				{
+					"name": "Validar por nome cidade",
+					"item": [
+						{
+							"name": "Validar por cidade",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url_base_prev}}q={{porCidade_cidade}}&APPID={{api_key}}",
+									"host": [
+										"{{url_base_prev}}q={{porCidade_cidade}}&APPID={{api_key}}"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"auth": {
+						"type": "noauth"
+					},
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					]
+				},
+				{
+					"name": "Validar por cidade | UF code",
+					"item": [
+						{
+							"name": "Validar por cidade e UF code",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url_base_prev}}q={{porCidade_cidadeUF}}&appid={{api_key}}",
+									"host": [
+										"{{url_base_prev}}q={{porCidade_cidadeUF}}&appid={{api_key}}"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Validar por ID",
+					"item": [
+						{
+							"name": "Validar por ID",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url_base_prev}}id={{porCidadeID}}&appid={{api_key}}",
+									"host": [
+										"{{url_base_prev}}id={{porCidadeID}}&appid={{api_key}}"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "validar por coordenadas",
+					"item": [
+						{
+							"name": "Validar por coordenadas",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url_base_prev}}lat={{porCidadeLat}}&lon={{porCidadeLon}}&appid={{api_key}}",
+									"host": [
+										"{{url_base_prev}}lat={{porCidadeLat}}&lon={{porCidadeLon}}&appid={{api_key}}"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Validar por codigo postal",
+					"item": [
+						{
+							"name": "Validar por zip Code",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url_base_prev}}zip={{porCidadeZIP}},us&appid={{api_key}}",
+									"host": [
+										"{{url_base_prev}}zip={{porCidadeZIP}},us&appid={{api_key}}"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Por cidades",
+			"item": [
+				{
+					"name": "Coord em retângulo",
+					"item": [
+						{
+							"name": "Validar por coord ret",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "api.openweathermap.org/data/2.5/box/city?bbox={{porCidadesRet}}&appid={{api_key}}",
+									"host": [
+										"api",
+										"openweathermap",
+										"org"
+									],
+									"path": [
+										"data",
+										"2.5",
+										"box",
+										"city"
+									],
+									"query": [
+										{
+											"key": "bbox",
+											"value": "{{porCidadesRet}}"
+										},
+										{
+											"key": "appid",
+											"value": "{{api_key}}"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Coord em circulo",
+					"item": [
+						{
+							"name": "Validar por coord cir",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "api.openweathermap.org/data/2.5/find?lat=55.5&lon=37.5&cnt=10&appid={{api_key}}",
+									"host": [
+										"api",
+										"openweathermap",
+										"org"
+									],
+									"path": [
+										"data",
+										"2.5",
+										"find"
+									],
+									"query": [
+										{
+											"key": "lat",
+											"value": "55.5"
+										},
+										{
+											"key": "lon",
+											"value": "37.5"
+										},
+										{
+											"key": "cnt",
+											"value": "10"
+										},
+										{
+											"key": "appid",
+											"value": "{{api_key}}"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Validar Temperatura",
+			"item": [
+				{
+					"name": "Temp Celcius",
+					"item": [
+						{
+							"name": "Temp Celcius",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url_base_prev}}q={{tempPaisC}}&units=metric&appid={{api_key}}&lang=pt",
+									"host": [
+										"{{url_base_prev}}q={{tempPaisC}}&units=metric&appid={{api_key}}&lang=pt"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Temp Fahrenheit",
+					"item": [
+						{
+							"name": "Temp Fahrenheit",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url_base_temp}}q={{tempPaisF}}&units=imperial&appid={{api_key}}",
+									"host": [
+										"{{url_base_temp}}q={{tempPaisF}}&units=imperial&appid={{api_key}}"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Temp Kelvin",
+					"item": [
+						{
+							"name": "Temp Kelvin",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url_base_temp}}q={{tempPaisK}}&appid={{api_key}}",
+									"host": [
+										"{{url_base_temp}}q={{tempPaisK}}&appid={{api_key}}"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"   console.log(\"Iniciando a request \" + pm.info.requestName);"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"//teste funcional do status code",
+					"pm.test(\"Validar status code 200\", function () {",
+					"    pm.response.to.have.status(200);",
+					"    console.log(\"Status code testado\");",
+					"});",
+					"",
+					"//teste não funcional de tempo de resposta",
+					"pm.test(\"Validar response menor que 5s\", function () {",
+					"    pm.expect(pm.response.responseTime).to.be.below(5000);",
+					"    console.log(\"Tempo de resposta testado\");",
+					"});",
+					"",
+					"",
+					"//Testar se os requests da folder Por cidade traz o response body esperado e unico pra esses endpoint",
+					"if (pm.info.requestName=='Validar por cidade' ||pm.info.requestName== 'Validar por cidade e UF code' ||pm.info.requestName== 'Validar por ID' ||pm.info.requestName== 'validar por coordenadas' ||pm.info.requestName== 'Validar por zip Code'){",
+					"",
+					"pm.test(\"Responde body contem timezone\", function () {",
+					"    pm.expect(pm.response.text()).to.include(\"timezone\");",
+					"       console.log(\"timezone presente no body response\");",
+					"});",
+					"}",
+					"",
+					"",
+					"",
+					"",
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "porCidade_cidade",
+			"value": "Protaras"
+		},
+		{
+			"key": "porCidade_cidadeUF",
+			"value": "London,uk"
+		},
+		{
+			"key": "porCidadeID",
+			"value": "14256"
+		},
+		{
+			"key": "porCidadeLat",
+			"value": "2.80257"
+		},
+		{
+			"key": "porCidadeLon",
+			"value": "44.0780"
+		},
+		{
+			"key": "porCidadeZIP",
+			"value": "96162"
+		},
+		{
+			"key": "porCidadesRet",
+			"value": "12,32,15,39,10"
+		},
+		{
+			"key": "tempPaisC",
+			"value": "Paris"
+		},
+		{
+			"key": "tempPaisF",
+			"value": "Paris"
+		},
+		{
+			"key": "tempPaisK",
+			"value": "Paris"
+		}
+	]
+}
